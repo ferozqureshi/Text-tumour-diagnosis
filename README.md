@@ -12,16 +12,21 @@
    - obscene
    - threat
    - insult
-   - identity_hate
+   - identity_hate <br/> <br/>
+ Our aim is to create a model which predicts a probability of each type of toxicity for each comment.
+ 
+ The sample dataset looks as follows:
 
-Our aim is to create a model which predicts a probability of each type of toxicity for each comment.
+![alt text](https://github.com/ferozqureshi/Text-tumour-diagnosis/blob/main/head.png)
+
+
   
 
 
 ## Process followed in solving the problem:
 &nbsp; &nbsp;1️⃣Loading in data <br/> 
 &nbsp; &nbsp;2️⃣Preprocessing comments <br/> 
-&nbsp; &nbsp;3️⃣Creating a deep NLP model <br/> 
+&nbsp; &nbsp;3️⃣Creating an RNN LSTM model <br/> 
 &nbsp; &nbsp;4️⃣evaluating model performance <br/> 
 &nbsp; &nbsp;5️⃣creating a gradio DL app
 	
@@ -29,46 +34,43 @@ Our aim is to create a model which predicts a probability of each type of toxici
 ### 1️⃣Loading in data:
 &nbsp; &nbsp;&nbsp; &nbsp;Pandas has been used to load the csv locally.
 ### 2️⃣Pre-processing the comments
-&nbsp; &nbsp; Pre-processing is an important step when comes to NLP. Here, we need to tokenize our strings before we do anything.<br/>
-&nbsp;In keras there is [TextVectorization](https://www.tensorflow.org/api_docs/python/tf/keras/layers/TextVectorization) layer which does it for us.These tokens don't actually add more value until we convert them into word embeddings.
-  TextVectorization: A preprocessing layer which maps text features
-	to integer sequences.
-link for documentation 
-I have taken the vocab dictionary in the vectorizer to be 200,000
-which is a big dictionary, and I've done it to maximize the accuracy.
-by max_tokens=20000)
-I've taken the maximum sequence length to be 1800.
+&nbsp; &nbsp;&nbsp; &nbsp;Pre-processing is an important step when comes to NLP. Here, we need to tokenize our strings before we do anything.<br/>
+&nbsp;In keras there is [TextVectorization](https://www.tensorflow.org/api_docs/python/tf/keras/layers/TextVectorization) layer which does it for us.These tokens(maps text features to integer sequences)don't actually add more value until we convert them into word embeddings.
+<br/> 
+&nbsp; &nbsp;&nbsp; &nbsp;I have taken the vocab dictionary in the textvectorizer to be 200,000 (max_tokens=20000)
+which is a big dictionary, and I've done it to maximize the accuracy. I've taken the maximum sequence length to be 1800.
 
-#### The pipeline steps that I've followed:
-1) .Dataset.from_tensor_slices(X,y)
-2) dataset.cache()
-3) dataset.shuffle() buffersize
-4)dataset.batch(16)
-5)dataset.prefetch(8)  helps prevents bottlenecks
--- to squeeze the juice out of my gpu
+#### The pipeline that I've followed:
+   - Converted slices of an array in the form of objects by using tf.Dataset.from_tensor_slices()
+   - Cached the data dataset.cache()
+   - Shuffled the data using dataset.shuffle()
+   - Made batches of 16 data points by using dataset.batch(16)
+   - To prevent bottleneck, I have done the pre-fetching using dataset.prefetch(8)
 
-### 3️⃣Creating a deep NLP model
-1) Embedding layer - converts the tokens to embeddings
-2)LSTM bidirectional layer ( I've used tanh activation,
-I'd 've used relu, but tensorflow dictates to use tanh in specific)
- the reason why I've used bidirectional layer is because 
+### 3️⃣Creating an RNN LSTM model
+1) Firstly, I've created an Embedding layer which converts the tokens to embeddings.<br/>
+2) Next, I've used LSTM (Long Short-Term Memory) bidirectional layer to fit it.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;It is well known that LSTM performs better with
+sequences, and sequences is what we've. <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;I've used tanh activation because tensorflow dictates to use tanh in specific to LSTM.
+ The reason why I've used bidirectional layer is because 
  the sequences can have modifier words which changes the meaning of
 of the sentence.
 
-trained till the losses; training loss:-  , validation loss:-
+I've trained for 5 epochs till the losses are ; training loss:-  , validation loss:-
 
-LSTM, it is well known that LSTM performs better withh 
-sequences, and sequences is what we've.
+
 
 ### 4️⃣Evaluating model performance
-	Precison
-	Recall
-	CategoricalAccuracy
+The following metrics has been used:<br/>
+   - Precison
+   - Recall
+   - CategoricalAccuracy
    - make a note of all metrics
 
-Finally, serialize the model to h5 file (.h5 format uses?)
-and integrate it with gradio ( gradio has been lightweight and
-powerful)
+### 5️⃣Creating a gradio DL app
+Finally, I serialized the model to h5 file
+and integrated it with gradio.
 
 Final look of Web Api: a gif...
   
