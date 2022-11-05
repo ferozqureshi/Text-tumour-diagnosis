@@ -16,3 +16,11 @@ We are provided with a large number of Wikipedia comments which have been labele
 
 Our aim is to create a model which predicts a probability of each type of toxicity for each comment.
   
+
+
+Process followed in solving the problem:
+  1. Loading in data
+	2. Preprocessing comments 
+	3. Creating a deep NLP model
+	4. evaluating model performance
+	5. creating a gradio DL app
