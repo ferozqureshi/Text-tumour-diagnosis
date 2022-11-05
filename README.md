@@ -1,7 +1,7 @@
 # Text tumour diagnosis : Comment toxicity classification
 
 ## Motivation:
-&nbsp; &nbsp; Lot of hate can be spread through social media. Comments and other text basedc post has a great hand in it. As a precaution, a model which can detect the hate, toxicity, and obscenity in the text is essential. The model that I posted in the following repository can be a possible solution for that. My model can be integrated alongside personal blogs, or any other social media platforms to filter out such comments.
+&nbsp; &nbsp; Lot of hate can be spread through social media. Comments and other text based posts have a great hand in it. As a precaution, a model which can detect the hate, toxicity, and obscenity in the text is essential. The model that I posted in the following repository can be a possible solution for that. My model can be integrated alongside personal blogs, or any other social media platforms to filter out such comments.
 
 ## Dataset Description
 &nbsp; &nbsp; This has series of comments as strings where We are provided with a large number of Wikipedia comments which have been labeled by human raters for toxic behavior.
