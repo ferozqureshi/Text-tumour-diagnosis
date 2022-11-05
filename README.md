@@ -1,9 +1,4 @@
-# Sparks-Foundation-Internship-Programme
-This repository consists of tasks given during Internship
+# Text tumour diagnosis : Comment toxicity classification
 
-## About the Sparks Foundation
-![alt text](https://github.com/ferozqureshi/Sparks-Foundation-Internship-Programme/blob/main/logo_small.png/)
-
-The Sparks Foundation mission is to inspire students, help them innovate, and let them integrate to build the next generation humankind. To inspire, motivate, and encourage students to learn, create, and help build a better society. To teach new ways of thinking, to innovate and solve the problems on their own. We help the students to integrate and help each other, learn from each other, and do well together.
-
-Their Vision Statement : A world of enabled and connected little minds, building future. Our Mission Statement To inspire students, help them innovate and let them integrate to build the next generation humankind.
+Motivation:
+  Lot of hate can be spread through social media. comments and other text post has a great hand beside it. As a precaution, a model which can detect the hate, toxicity, and vulgourness in the text is essential. The model that I posted in the following repository can be a possible solution for that. My model can be integrated alongside personal blogs, or any other social media platform.
