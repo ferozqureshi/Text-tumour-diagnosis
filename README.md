@@ -73,5 +73,9 @@ The following metrics has been used:<br/>
 Finally, I serialized the model to h5 file
 and integrated it with gradio.
 
-Final look of Web Api: a gif...
+Final look of Web Api: 
   
+
+https://user-images.githubusercontent.com/70518130/200148660-e067a038-9154-4eb1-9e9a-a588bb1c3136.mp4
+
+
