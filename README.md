@@ -57,16 +57,17 @@ sequences, and sequences is what we've. <br/>
  the sequences can have modifier words which changes the meaning of
 of the sentence.
 
-I've trained for 5 epochs till the losses are ; training loss:-  , validation loss:-
-
+I've trained for 5 epochs till the losses are ; training loss:- 0.0287 , validation loss:- 0.0239 <br/>
+&nbsp; &nbsp;&nbsp; &nbsp;<img src="https://github.com/ferozqureshi/Text-tumour-diagnosis/blob/main/training&validation_loss.png" height=200/>
 
 
 ### 4️⃣Evaluating model performance
 The following metrics has been used:<br/>
    - Precison
    - Recall
-   - CategoricalAccuracy
-   - make a note of all metrics
+   - CategoricalAccuracy <br/><br/>
+   
+  &nbsp;&nbsp;&nbsp;&nbsp;I've achieved these values at the end; Precision: 0.9034322500228882, Recall:0.85329669713974, Accuracy:0.49548646807670593
 
 ### 5️⃣Creating a gradio DL app
 Finally, I serialized the model to h5 file
